@@ -23,11 +23,11 @@
 # define PI 3.14159
 
 # ifndef WIDTH
-#  define WIDTH 1500
+#  define WIDTH 1920
 # endif
 
 # ifndef HEIGHT
-#  define HEIGHT 900
+#  define HEIGHT 1080
 # endif
 
 # ifndef MINI_WIDTH

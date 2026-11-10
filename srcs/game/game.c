@@ -86,39 +86,41 @@ void	fill_texture_wall(t_game *game, t_vec2 start, float height, t_dist hit)
 	}
 }
 
-void	set_wall(t_game *game, t_player player, float ray_angle)
+void	set_wall(t_game *game, t_player player,
+		float ray_angle, float focal, int x)
 {
-	t_dist		hit;
-	float		height;
-	float		start;
-	float		stop;
-	float		x;
+	t_dist	hit;
+	float	height;
+	float	start;
+	float	stop;
 
-	hit = find_hit(player.dir_x + (ray_angle), player.x, player.y);
-	hit.dist = distance(player.x, player.y, hit.hit, (ray_angle));
+	hit = find_hit(player.dir_x + ray_angle, player.x, player.y);
+	hit.dist = distance(player.x, player.y, hit.hit, ray_angle);
 	if (hit.dist < 2)
 		hit.dist = 2;
 	hit.side = set_side_wall(hit);
-	height = (28 / hit.dist) * (WIDTH / 3.7f);
-	start = ((HEIGHT - height) / 2);
+	height = (SCALE * focal) / hit.dist;
+	start = (HEIGHT - height) / 2;
 	stop = height + start + (player.z * 30 / hit.dist) + player.dir_y;
 	start += (player.z * 30 / hit.dist) + player.dir_y;
-	x = ((float)WIDTH / 2) + ray_angle * (WIDTH / game->fov);
 	fill_texture_wall(game, (t_vec2){x, start}, stop - start, hit);
 }
 
 void	put_game(t_game *game)
 {
 	float		ray_angle;
+	float		focal;
 	t_player	player;
-	float		step;
+	int			x;
 
-	ray_angle = -(game->fov / 2);
 	player = game->player;
-	step = game->fov / WIDTH;
-	while (ray_angle < game->fov / 2)
+  focal = HEIGHT / (2.0f * tanf(game->fov * PI / 360.0f));
+	x = 0;
+	while (x < WIDTH)
 	{
-		set_wall(game, player, ray_angle);
-		ray_angle += step;
+    ray_angle = atanf((x + 0.5f - WIDTH / 2.0f) / focal);
+		ray_angle *= 180.0f / PI;
+		set_wall(game, player, ray_angle, focal, x);
+		x++;
 	}
 }

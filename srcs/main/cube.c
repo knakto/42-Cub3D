@@ -28,12 +28,12 @@ void	intit(void)
 	g->first_render = true;
 	g->player_speed = 0.39;
 	g->player_size = SCALE / 2;
-	g->move_cam_speed = 1;
+	g->move_cam_speed = 2;
 	g->minimap.x = 0;
 	g->minimap.y = 0;
 	g->fog = true;
 	g->fov = 65;
-	g->mouse = 1;
+	g->mouse = 0;
 }
 
 int	main(int argc, char **argv)

@@ -77,7 +77,7 @@ static void	put_bg(t_game *game, size_t bg_top, size_t bg_down)
 	color = bg_top;
 	while (i < HEIGHT + 600)
 	{
-		if (i >= (HEIGHT / 2.0f) + game->player.dir_y)
+		if (i >= (HEIGHT / 1.9f) + game->player.dir_y)
 			color = bg_down;
 		j = 0;
 		while (j < WIDTH)

@@ -1,10 +1,10 @@
-NO     ./texture/chibi_screenshot.png
-EA      ./texture/Bricks.png
+NO     ./texture/birch_planks.png
+EA      ./texture/birch_planks.png
+SO     ./texture/birch_planks.png
+WE   ./texture/birch_planks.png
 
 C  60,   76, 92
 F    26,  26,  26
-SO    ./texture/Bricks.png
-WE   ./texture/chibi_screenshot.png
 
         1111111111111111111111111
         1000000000110000000000001
