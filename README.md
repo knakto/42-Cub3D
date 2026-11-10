@@ -2,13 +2,15 @@
 
 ## Demo
 
-<video src="./assets/demo.mp4" controls width="100%"></video>
-what I want to show (my extra feature):
- - can move with `w/a/s/d` for mandatory require
- - have portal can taleport
- - can sprint when press `shift`
- - can move mouse on y axis
- - can jump!!
+![Cub3D Demo](./assets/demo.gif)
+
+## Features
+
+- WASD movement
+- Portal teleportation
+- Sprint with Shift
+- Mouse Y-axis movement
+- Jumping
 
 ### structure file
 ```
