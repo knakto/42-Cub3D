@@ -2,7 +2,7 @@
 
 ## Demo
 
-<video src="./assets/recording.mp4" controls width="100%"></video>
+<video src="./assets/demo.mp4" controls width="100%"></video>
 what I want to show (my extra feature):
  - can move with `w/a/s/d` for mandatory require
  - have portal can taleport
